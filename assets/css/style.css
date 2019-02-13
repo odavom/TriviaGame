@@ -1,0 +1,82 @@
+
+
+.outsideContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+/* The Start button in the start container */
+#startbtn {
+    height: 300px;
+    width: 200px;
+    background-image: url("../images/startButtonImage.jpeg");
+    background-size: 200px;
+    border-radius: 50px;
+    border: 2px solid red; 
+}
+
+#startbtn:hover {
+    box-shadow: 15px 20px 25px 15px rgba(248, 2, 2, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  
+}
+
+#startbtn:active {
+    background-color: #3e8e41;
+    transform: translateY(3px);
+}
+/* The Quiz Container */
+#quiz {
+    border: 2px solid red;
+    height: 400px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    
+}
+/* The questions image container inside quiz container */
+#questionImage {
+    border: 1px solid red;
+    height: 150px;
+    width: 50%;
+    flex-direction: row; 
+}
+/* The question container inside quiz container */
+#question {
+    border: 1px solid red; 
+    height: 150px;
+    width: 50%;
+}
+/* The choices container inside quiz container */
+#choices {
+    border: 1px solid red; 
+    height: 100px;
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+/* Each choice inside the choices container */
+.choice {
+    border: 1px solid red;
+    height: 50px;
+    width: 50%;
+    flex-direction: row;
+}
+/* The time container inside quiz container */
+#timer {
+    border: 1px solid red; 
+    height: 50px;
+    width: 50%;
+}
+/* The progress container inside quiz container */
+#progress {
+    border: 1px solid red; 
+    height: 50px;
+    width: 50%;
+}
+/* The score container */
+#score {
+    border: 1px solid red; 
+    height: 400px; 
+     /* display: none; */
+}
