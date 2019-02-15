@@ -1,3 +1,6 @@
+
+// questions array that holds objects - these need to pop into the appropriate html elements every 15 seconds after the start button is pressed
+
 let questions = [ 
     {
        question: "Which character finds Dennis' book of memoirs in the episode 'Dennis Reynolds an erotic life'?",
@@ -42,6 +45,7 @@ let questions = [
     }
 ];
 
+// declaring variables that can't be changed and assigning them to ID
 const startBtn = document.getElementById("startBtn");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
@@ -52,9 +56,106 @@ const choiceC = document.getElementById("C");
 const choiceD = document.getElementById("D");
 const timer = document.getElementById("timer");
 const progress = document.getElementById("progress");
-const score = document.getElementById("score");
+const scoreDiv = document.getElementById("score");
 
+// declaring variables for the render question function
+const lastQuestionIndex = questions.length -1;
+let runningQuestion = 0;
+
+let runningQuestionIndex = 0;
+
+
+// declaring variables for render Counter function
+let count = 0;
+const questionTime = 10;
+const gaugeWidth = 150;
+const gaugeUnit = gaugeWidth / questionTime;
+let TIMER;
+
+// variables for check answer function
+// let score = 0;
+
+// 
+
+//$(document).ready(function(){
+
+
+startBtn.addEventListener("click",startQuiz);
+
+// declaring a function to begin the quiz
 function startQuiz() {
     startBtn.style.display = "none";
+    renderQuestion();
     quiz.style.display = "flex";
+    TIMER = setInterval(renderCounter, 1000);
+    
 }
+
+// declaring a function to render the questions
+function renderQuestion() {
+    let q = questions[runningQuestion];
+    console.log(q)
+    question.innerHTML = "<p>" + q.question + "</p>";
+    questionImage.innerHTML = "<img src=" + q.imgSrc + ">";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+    choiceD.innerHTML = q.choiceD;
+}
+
+function renderProgress() {
+    for(let qIndex = 0; qIndex <= lastQuestionIndex; qIndex++) {
+        progress.innerHTML += "<div class='dot' id="+qIndex+"></div>";
+    }
+}
+renderProgress();
+
+function renderCounter() {
+    if (count <= questionTime) {
+        console.log(count,questionTime)
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++;
+
+
+    } else {
+        count = 0;
+        checkAnswer();
+    }
+}
+
+function answerIsCorrect(index) {
+    console.log("ANSWER IS CORRECT")
+    document.querySelectorAll(index).style.backgroundColor = "#0f0"
+}
+
+
+function answerIsWrong(index) {
+    console.log("WRONG") // document.getElementsByClassName("dot").style.backgroundColor = "#f00"
+   var ele= document.getElementById(index);
+   ele.style.backgroundColor="green"
+}
+
+
+function checkAnswer(answer) {
+    console.log(answer)
+    console.log(questions[runningQuestion])
+    if (answer == questions[runningQuestion].correct) {
+        // score++;
+        answerIsCorrect(2); 
+    } else {
+        answerIsWrong(2);
+    }
+    if (runningQuestion < lastQuestion){
+        count = 0;
+        runningQuestion++;
+        renderQuestion();
+    } else {
+        clearInterval(TIMER);
+        scoreRender();
+    }
+        
+}
+
+
+//});

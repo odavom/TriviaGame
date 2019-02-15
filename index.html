@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- Link to google font family -->
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <!-- link to jquery -->
+    <script src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <!-- An outside container for all elements -->
@@ -26,36 +28,35 @@
         <!-- The Quiz container -->
         <div class="container" id="quiz">
             
-            <!-- Question Image -->
+            <!-- Question container -->
             <div id="question"></div>
             
-            <!-- Question container -->
+            <!-- Question image container -->
             <div id="questionImage"></div>
             
             <!-- Choices container  -->
             <div id="choices">
-                <div class="choice" id="A"></div>
-                <div class="choice" id="B"></div>
-                <div class="choice" id="C"></div>
-                <div class="choice" id="D"></div>
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
             </div>
 
             <!-- Timer Container -->
             <div id="timer">
-                <!-- <div id="counter"></div> -->
-                <!-- <div id="btimeGauge"></div>
-                <div id="timeGauge"></div> -->
-            </div>
+                <div id="counter">0</div> 
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div> 
 
             <!-- Progress Container -->
             <div id="progress">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <!-- <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div> -->
             </div>
-
         </div>
 
         <!-- Score container -->

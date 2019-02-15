@@ -8,12 +8,12 @@
     align-items: center;  
 }
 /* container that holds start button */
-/* #start {
+#start {
     height: 300px;
     width: 200px;
     border-radius: 50px;
     justify-content: center;
-} */
+}
 /* The Start button in the start container */
 #startBtn {
     height: 300px;
@@ -41,7 +41,7 @@
     justify-content: left;
     flex-wrap: wrap;
     align-items: center;
-    /* display: none; */
+    display: none;
     
 }
 /* The questions image container inside quiz container */
@@ -50,6 +50,7 @@
     height: 150px;
     width: 50%;
     flex-direction: row; 
+    overflow: hidden;
 }
 /* The question container inside quiz container */
 #question {
@@ -79,7 +80,21 @@
     border: 1px solid red; 
     height: 50px;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
+#counter {
+
+}
+/* the time gauage inside the timer container */
+#timeGauge {
+    height: 20px;
+    width: 150px;
+    border: 1px solid red;
+    
+}
+
 /* The progress container inside quiz container */
 #progress {
     border: 1px solid red; 
@@ -95,8 +110,9 @@
 .dot {
     height: 25px;
     width: 25px;
-    background-color: #bbb;
+    /* background-color: #bbb; */
     border-radius: 50%;
+    border: 1px solid black;
 }
 /* The score container */
 #score {
