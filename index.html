@@ -1,78 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
-    <!-- Bootstrap link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- CSS link -->
+    <title>TRIVIA GAME</title>
+    <!-- link to CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- CSS reset link -->
+    <!-- link to reset CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
-    <!-- Link to google font family -->
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <!-- link to jquery -->
-    <script src="jquery-3.3.1.min.js"></script>
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link to jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <!-- An outside container for all elements -->
-    <div class="container outsideContainer">
+<body class="text-center">
 
-        <!-- The start container -->
-        <!-- <div id="start" > -->
-            <button id="startBtn" onclick="startQuiz()"></button>
-        <!-- </div> -->
+    <!-- this container holds the game -->
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-        <!-- The Quiz container -->
-        <div class="container" id="quiz">
-            
-            <!-- Question container -->
-            <div id="question"></div>
-            
-            <!-- Question image container -->
-            <div id="questionImage"></div>
-            
-            <!-- Choices container  -->
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+        <!-- First Page with Start Button -->
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">It's Always Sunny Trivia!</h1>
+            <p class="lead btn btn-lg btn-danger" id="game-start">Start</p>
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+                <p id="countdown">Time Remaining:<span id="timer"></span></p>
             </div>
+        </main>
+                
+                <!-- Trivia Questions Section -->
+        <div class="trivia-ques text-center">
 
-            <!-- Timer Container -->
-            <div id="timer">
-                <div id="counter">0</div> 
-                <div id="btimeGauge"></div>
-                <div id="timeGauge"></div>
-            </div> 
+            <!-- The first question -->
+            <p class="quest">1. What is the gang's drink of choice in the episode "The gang gives Frank an intervention"?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> Wine in a can
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Wine in a box  
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Beer in a can 
+                </label>
+            </form>
 
-            <!-- Progress Container -->
-            <div id="progress">
-                <!-- <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div> -->
+            <!-- The second question -->
+            <p class="quest">2. Frank cancelled Dennis' and Dee's health insurance when they were kids, how old where they?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> 18
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> 9 
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> 10
+                </label>
+            </form>
+
+            <!-- The third question -->
+            <p class="quest">3. Which of these was not seen in Charlie's dream book?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> milk steak
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> denim Charlie
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> bird with teeth
+                </label>
+            </form>
+
+            <!-- The fourth question -->
+            <p class="quest">4. In the episode "The Gang runs for office", what does Charlie give fran in exchange for Dennis' smear campaign?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> elephant painting
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> garbage pail kids 
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> grilled Charlie
+                </label>
+            </form>
+
+            <!-- The fifth question -->
+            <p class="quest">5. What character finds Dennis' book of memoires in the episode "Dennis Reynolds an erotic life"?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Mac
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Dee
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> Charlie
+                </label>
+            </form>
+              
+            <!-- the sixth question -->
+            <p class="quest">6. What movie does Dennis rent for movie night in the episode "Mac and Dennis break up"?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Rocky 4
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Predator
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> The Transporter 2
+                </label>
+            </form>
+
+            <!-- The seventh question -->
+            <p class="quest">7. What is the name of Dennis and Mac's neighbor in the episode "Mac and Dennis move to the suburbs"?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> Wally
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Willy
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Walter
+                </label>
+            </form>
+
+            <!-- The eigth question -->
+            <p class="quest">8. Who is Art Sloan?</p>
+            <form class="question">
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Dee's boyfriend
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="correct"> The owner of Molly's
+                </label>
+                <label class="form-check form-check-inline text-mysize">
+                    <input type="radio" name="optradio" class="optradio" value="wrong"> Frank's business partner
+                </label>
+            </form>
+                
+                    <!-- Done Button -->
+            <div>
+                <p class="lead btn btn-lg btn-danger" id="game-done">Done</p>
             </div>
         </div>
 
-        <!-- Score container -->
-        <div class="container" id="score">
+                  <!-- Last page with Summary of results -->
+        <div class="results">
+            <p class="lead2" id="summary">All Done!</p> 
+            <p class="lead2" id="correctScore">Correct Answers:</p>
+            <p class="lead2" id="wrongScore"></p>
+            <p class="lead2" id="unanswered"></p>
         </div>
+                
+    </div>  <!--Div class container end -->
 
+        <!-- JQuery & Javascript file Links -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
 
-    </div>
-    
-    
-    
-
-
-    
- <script src="assets/javascript/app.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</body>
+      </body>
 </html>

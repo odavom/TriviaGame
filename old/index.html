@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS reset link -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Link to google font family -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <!-- link to jquery -->
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- An outside container for all elements -->
+    <div class="container outsideContainer">
+
+        <!-- The start container -->
+        <!-- <div id="start" > -->
+            <button id="startBtn" onclick="startQuiz()"></button>
+        <!-- </div> -->
+
+        <!-- The Quiz container -->
+        <div class="container" id="quiz">
+            
+            <!-- Question container -->
+            <div id="question"></div>
+            
+            <!-- Question image container -->
+            <div id="questionImage"></div>
+            
+            <!-- Choices container  -->
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+            </div>
+
+            <!-- Timer Container -->
+            <div id="timer">
+                <div id="counter">0</div> 
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div> 
+
+            <!-- Progress Container -->
+            <div id="progress">
+                <!-- <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div> -->
+            </div>
+        </div>
+
+        <!-- Score container -->
+        <div class="container" id="score">
+        </div>
+
+
+    </div>
+    
+    
+    
+
+
+    
+ <script src="assets/javascript/app.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+</html>
