@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     // declaring variables
     let number = 90; //number of seconds
-    let inervalId;
+    let intervalId;
     let correctCount = 0;
     let wrongCount = 0;
     let unanswered = 0;
